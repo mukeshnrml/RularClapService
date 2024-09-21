@@ -1,0 +1,119 @@
+/* body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color:#26394E ;
+    }
+*/
+    /* Container for the profile image */
+.profile-image-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%; /* Ensure the container is also circular */
+}
+
+/* Profile Image Styles */
+.my_profile_picture {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 5px solid black; /* Black border around the image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.profile-image-container:hover .my_profile_picture {
+    transform: scale(1.2); /* Enlarge the image */
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.7); /* Add a brighter white shadow */
+}
+
+/* Card Styles */
+.card {
+    margin: auto;
+    width: 90%; /* Increase card width to 80% of its container */
+    background-color: #33cccc;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.4); /* White shadow for the card */
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute; /* Make sure the container takes the full viewport */
+    top: 0;
+    left: 0;
+}
+
+section {
+    position: absolute; /* Ensure the section is positioned absolutely */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the section */
+    z-index: 1; /* Ensure the section is above the animation */
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent card background */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Optional: Add a border */
+}
+
+.card-body {
+    padding: 2rem; /* Adjust padding if needed */
+}
+
+.card-body .p-4 {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque for inner content */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+  .nav-link.home-link {
+        background-color: transparent !important; /* Ensure no background color */
+        color: white; /* Ensure text color matches surrounding text */
+        border: none !important; /* Remove any borders if present */
+    }
+    
+/*Show-Contact-CSS */
+   /* Ensure section takes full viewport height */
+    section {
+        min-height: 100vh; /* Full viewport height */
+    }
+
+    /* Card styling */
+    .card {
+        border-radius: 12px; /* Rounded corners */
+    }
+
+    /* Search input styling */
+    .search-container input {
+        border-radius: 20px; /* Rounded corners for search input */
+        padding: 10px; /* Padding inside input */
+    }
+
+    /* Table styling */
+    .table {
+        background-color: #fff; /* White background for table */
+        border-radius: 8px; /* Rounded corners for table */
+    }
+
+    /* Table header styling */
+    .table thead th {
+        background-color: #343a40; /* Dark background for table header */
+        color: #fff; /* White text color for table header */
+    }
+
+    /* Add scroll to table body */
+    .table-responsive {
+        max-height: 500px; /* Set maximum height for table */
+        overflow-y: auto; /* Add vertical scroll */
+    }
+    
+/*Add-Contact-CSS */
+
+   

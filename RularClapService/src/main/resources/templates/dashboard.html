@@ -1,0 +1,136 @@
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+    <!-- Fevicon  -->
+    <link href="https://cdn-icons-png.freepik.com/512/4851/4851812.png" rel="icon">
+
+<!-- Icon Font Stylesheet -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Libraries Stylesheet -->
+<link href="lib/animate/animate.min.css" rel="stylesheet">
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
+	
+	  <style>
+        .payment-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-control {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+        }
+        .btn-success {
+            border-radius: 25px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top">
+    <a href="#" class="navbar-brand d-flex align-items-center px-4" style="margin: 20px; padding: 15px;">
+        <p class="m-0 fw-bold" style="font-size: 25px;">
+            <i class="fa fa-briefcase text-primary ms-2"></i> Rular<span style="color: #fb873f;">Clap</span>
+        </p>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ms-auto text-uppercase">
+           
+            <li class="nav-item">
+                <a class="nav-link px-3 py-4 rounded" href="#" th:href="@{/logout}" style="font-weight: bold; color: black;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+            <!-- Additional User Info -->
+            <li class="nav-item">
+                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" style="font-weight: bold; color: black;">
+                    <span th:text="${employer.name}"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+	
+
+<!-- Contact Cards Section -->
+<section class="my-5">
+    <h2 class="text-center">Labour Information</h2>
+    <div class="card-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+        <!-- Loop through contacts and display in card format -->
+        <div th:each="contact : ${contacts}" class="card" style="flex: 1 1 calc(25% - 20px); box-sizing: border-box; max-width: 300px;">
+            <div class="card-body">
+                <img src="" style="height: 200px; width: 200px;" class="my_profile_picture" th:src="@{'/img/'+${contact.image}}" alt="Profile Photo">
+                <h3 class="card-title" th:text="${contact.name}">Contact Name</h3>
+                <p class="card-text">
+                    <strong>Work:</strong> <span th:text="${contact.work}">Contact Work</span><br>
+                    <strong>Experience:</strong> <span th:text="${contact.experience}">Contact Experience</span>
+                </p>
+
+                <!-- Hidden additional details -->
+                <div class="additional-details" style="display: none;">
+                    <p><strong>Email:</strong> <span th:text="${contact.email}">Contact Email</span></p>
+                    <p><strong>Phone:</strong> <span th:text="${contact.phone}">Contact Phone</span></p>
+                    <p><strong>Address:</strong> <span th:text="${contact.address}">Contact Address</span></p>
+                </div>
+
+                <!-- Buttons for View Details and Book Now -->
+                <div class="card-buttons" style="margin-top: 15px;">
+                    <button class="btn btn-primary view-details-btn" style="margin-right: 10px;" onclick="toggleDetails(this)">View Details</button>
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+</section>
+ 
+<script>
+    // Function to toggle additional details on click
+    function toggleDetails(button) {
+        const cardBody = button.closest('.card-body');
+        const details = cardBody.querySelector('.additional-details');
+        if (details.style.display === 'none' || details.style.display === '') {
+            details.style.display = 'block';
+            button.textContent = 'Hide Details';
+        } else {
+            details.style.display = 'none';
+            button.textContent = 'View Details';
+        }
+    }
+</script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

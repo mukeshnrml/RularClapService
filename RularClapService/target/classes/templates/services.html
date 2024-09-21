@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>RuralClap</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="https://cdn-icons-png.freepik.com/512/4851/4851812.png" rel="icon">
+
+    
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<style>
+.card-img-size{
+ height:300px;
+ width:150px;
+}
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 a">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 25px;"><i class="fa fa-briefcase text-primary ms-2"></i> &nbsp;Rural<span
+                    style="color: #fb873f;">Clap</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About Us</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+
+
+          <div class="nav-item dropdown">
+          <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        User Login 
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" th:href="@{/employerlogin}" href="#">Login</a>
+                        <a class="dropdown-item" th:href="@{/register	}" href="#">Signup</a>
+                    </div>
+                 </li>
+         </div>
+         <div class="nav-item dropdown" style="border-color:white;">
+           <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Labour Login 
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" th:href="@{/signin}" href="#">Login</a>
+                        <a class="dropdown-item" th:href="@{/signup}" href="#">Signup</a>
+                    </div>
+                </li>
+		</div>
+       
+                <a href="#" class="nav-item nav-link">
+                    <div id="google_translate_element"></div>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Services</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Service</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+    
+<!-- card section -->
+<h2 class="text-center mt-3 fontst">All Services</h2>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-3 d-flex">
+            <div class="card h-100 w-100 d-flex flex-column">
+                <a href="#" target="_blank" class="textp" onclick="showLoginAlert(event)">
+                    <img class="imgh card-img-size" src="https://cdn.iconscout.com/icon/free/png-256/free-electric-labour-1103846.png" alt="CHIM">
+                   <!--  <div class="card-title mt-3">Electrician</div>  -->
+                </a>
+                <div class="mt-auto">
+                    <button class="btn btn-primary btn-lg btn-block w-100" onclick="showLoginAlert(event)">Electrician</button>
+                </div>
+                <p class="login-message"></p>
+            </div>
+        </div>
+
+        <div class="col-md-3 d-flex">
+            <div class="card h-100 w-100 d-flex flex-column" style="min-height: 300px;">
+                <a href="#" target="_blank" class="textp mt-4" onclick="showLoginAlert(event)">
+                    <img class="imgh" src="https://fixoby.com/wp-content/uploads/2022/03/fixoby-washing-machine-repair-15.png" alt="Native Water Purifier">
+                    
+                </a>
+                <div class="mt-auto">
+                    <button class="btn btn-primary btn-lg btn-block w-100" onclick="showLoginAlert(event)">Water Purifier Repair</button>
+                </div>
+                <p class="login-message"></p>
+            </div>
+        </div>
+
+        <div class="col-md-3 d-flex">
+            <div class="card h-100 w-100 d-flex flex-column" style="min-height: 300px;">
+                <a href="#" target="_blank" class="textp" onclick="showLoginAlert(event)">
+                    <img class="imgh" src="https://thumbs.dreamstime.com/b/cartoon-engineer-construction-worker-looking-computer-screens-man-builder-uniform-using-technology-to-study-diagrams-195541190.jpg" alt="Native Smart Locks">
+                  
+                </a>
+                <div class="mt-auto">
+                    <button class="btn btn-primary btn-lg btn-block w-100" onclick="showLoginAlert(event)">Computer Repair</button>
+                </div>
+                <p class="login-message"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second row -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-3 d-flex">
+            <div class="card h-100 w-100 d-flex flex-column" style="min-height: 300px;">
+                <a href="#" target="_blank" class="textp" onclick="showLoginAlert(event)">
+                    <img class="imgh" src="https://www.bestintownservices.ae/wp-content/uploads/2022/05/Fridge-Maintenance-Dubai.png" alt="Refrigerator Repair">
+                  
+                </a>
+                <div class="mt-auto">
+                    <button class="btn btn-primary btn-lg btn-block w-100" onclick="showLoginAlert(event)">Refrigerator Repair</button>
+                </div>
+                <p class="login-message"></p>
+            </div>
+        </div>
+
+        <div class="col-md-3 d-flex">
+            <div class="card h-100 w-100 d-flex flex-column">
+                <a href="#" target="_blank" class="textp mt-4" onclick="showLoginAlert(event)">
+                    <img class="imgh" src="https://thumbs.dreamstime.com/b/construction-workers-avatars-couple-vector-illustration-graphic-design-141288203.jpg" alt="Construction Worker">
+                
+                </a>
+                <div class="mt-auto">
+                    <button class="btn btn-primary btn-lg btn-block w-100" onclick="showLoginAlert(event)">Construction Worker</button>
+                </div>
+                <p class="login-message"></p>
+            </div>
+        </div>
+
+        <div class="col-md-3 d-flex">
+            <div class="card h-100 w-100 d-flex flex-column" >
+                <a href="#" target="_blank" class="textp" onclick="showLoginAlert(event)">
+                    <img class="imgh img-size" src="https://st2.depositphotos.com/1381969/11147/v/950/depositphotos_111471432-stock-illustration-cartoon-plumber-standing.jpg" alt="Plumbing Support">
+                 
+                </a>
+                <div class="mt-auto">
+                    <button class="btn btn-primary btn-lg btn-block w-100" onclick="showLoginAlert(event)">Plumbing Support</button>
+                </div>
+                <p class="login-message"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end card section -->
+
+
+
+
+<!-- Get In Touch Start -->
+<div class="container-fluid py-5 wow fadeInUp a " data-wow-delay=".3s">
+    <div class="container py-5 ">
+        <div class="px-4 py-5 shadow p-3 mb-5 bg-white rounded">
+            <div class="text-center">
+                <h1 class="display-5 mb-5">Empower Your Workforce with Local Talent</h1>
+                <p class="mb-5">Connecting you with skilled labor from rural areas to meet all your service needs.</p>
+            </div>
+            <form class="text-center mb-4" action="submitForm" method="post">
+                <div class="row g-4">
+                    <div class="col-xl-10 col-lg-12">
+                        <div class="row g-4">
+                            <div class="col-md-6 col-xl-3">
+                                <select name="serviceType" class="form-select p-3 border-0" required>
+                                    <option value="" selected>Type Of Service</option>
+                                    <option value="Electrician">Electrician</option>
+                                    <option value="Plumber">Plumber</option>
+                                    <option value="Salon">Salon</option>
+                                    <option value="AC Repair">AC Repair</option>
+                                    <option value="Carpenter">Carpenter</option>
+                                    <option value="Gardener">Gardener</option>
+                                    <option value="Housekeeper">Housekeeper</option>
+                                </select>
+                                <small class="form-text text-muted">Please select the type of service you need.</small>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <input type="text" name="name" class="form-control p-3 border-0" placeholder="Name" required>
+                                <small class="form-text text-muted">Enter your full name.</small>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <input type="text" name="phone" class="form-control p-3 border-0" placeholder="Phone" required pattern="\d{10}" title="Please enter a valid 10-digit phone number">
+                                <small class="form-text text-muted">Enter your 10-digit phone number.</small>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <input type="email" name="email" class="form-control p-3 border-0 border border-dark" placeholder="Email" required>
+                                <small class="form-text text-muted">Enter your email address.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-12">
+                        <input type="submit" class="btn btn-primary w-100 p-3 border-0" value="GET STARTED">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+  <!-- Get In Touch End -->
+    
+   
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="">Privacy Policy</a></p>
+                    <p><a class="text-light" href="">Terms & Condition</a></p>
+                    <p><a class="text-light" href="">FAQs & Help</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Green Park Niranjanpur, Dehradun, Uttrakhand</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 7488921583</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>ruralclap@gmail.com</p>
+                    
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
+                    <p>Join our newsletter to receive the latest updates, job opportunities, and success stories from rural areas. Empower your future with us! </p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <form action="#">
+                            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email"
+                                placeholder="Your email" required>
+                            <button type="submit"
+                                class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"><a
+                                    href="mailto:raygulshan960@gmail.com">Subscribe</a></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright bg-dark py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                        <a href="#" class="text-primary mb-0 display-6">Rural<span class="text-white">Clap</span><i class="fa fa-briefcase text-primary ms-2"></i></a>
+                    </div>
+                    <div class="col-md-4 copyright-btn text-center text-md-start mb-3 mb-md-0 flex-shrink-0">
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+    </div>
+    <!-- Footer End -->
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+
+<script>
+    function showLoginAlert(event) {
+        event.preventDefault();
+        const messageElement = event.target.closest('.card').querySelector('.login-message');
+        messageElement.textContent = 'Please login';
+    }
+</script>
+
+</body>
+
+</html>

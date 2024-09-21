@@ -1,0 +1,272 @@
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!-- Fevicon  -->
+<link href="https://cdn-icons-png.freepik.com/512/4851/4851812.png" rel="icon">
+
+<!-- Icon Font Stylesheet -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Libraries Stylesheet -->
+<link href="lib/animate/animate.min.css" rel="stylesheet">
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- google font  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">	
+<link rel="stylesheet" th:href="@{/css/hello.css}" />
+
+</head>
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-light shadow sticky-top" style="background-color: black;">
+<a class="navbar-brand d-flex align-items-center px-4" href="#">
+<p class="m-0 fw-bold" style="font-size: 1.5rem;">
+<i class="fa fa-briefcase text-light me-2"></i><span style="color: yellow;">Rural</span><span style="color: blue;">Clap</span>
+</p>
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+        <a class="nav-link px-3 py-2 text-white" href="#" th:href="@{/labour/index}">Home </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link px-3 py-2 rounded text-white" href="#" th:href="@{/labour/show-contacts/0}">View Labours</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link px-3 py-2 rounded text-white" href="#" th:href="@{/labour/add-contact}">Add Labour</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link px-3 py-2 rounded text-white" href="#" th:href="@{/labour/profile}">
+        <i class="fas fa-user-circle"></i> Your Profile
+        </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link px-3 py-2 rounded text-white" href="#" th:href="@{/labour/settings}">Settings</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link px-3 py-2 rounded text-white" href="#" th:href="@{/logout}">Logout</a>
+        </li>
+
+        <!-- Additional User Info -->
+        <li class="nav-item">
+        <a class="nav-link  text-white"  href="#" tabindex="-1" aria-disabled="true"><span th:text="${user.name}"></span></a>
+        </li>
+        </ul>
+    </div>
+</nav>		
+		
+<div id="container"></div>
+		
+<!-- Message Box -->
+<div th:if="${session.message}" class="alert text-center" role="alert">
+<div th:classappend="${'alert-' + session.message.type}">
+<span th:text="${session.message.content}"></span>
+</div>
+<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+</div>
+ 
+<div class="container">
+<div class="card mx-auto my-3" style="max-width: 600px; border-radius: 1rem; background-color: rgba(255, 255, 255, 0.0); box-shadow: 0 -4px 20px rgba(50, 100, 150, 0.5),  0 4px 20px rgba(50, 100, 150, 0.5);">
+<div class="card-body mb-5 px-5" >
+<h1 class="text-center text-white">Update Labour Profile</h1><div class="row">
+<div class="col-md-12" >
+
+<form action="#" th:object="${contact}" enctype="multipart/form-data" method="POST" th:action="@{/labour/process-update}" class="mt-2">
+<input type="hidden" th:value="${contact.cId}" name="cId" />
+		
+						
+<!-- First Name  -->
+<div class="input-group">
+<div class="input-group-prepend">
+<div class="input-group-text">
+<i class="fa fa-user-alt text-primary"></i> <!-- Blue icon -->
+</div>
+</div>
+<input th:value="${contact.name}" required type="text" id="firstName" name="name" placeholder="Enter Name here" class="form-control" />
+</div>
+                           
+<!-- Second Name  -->
+<div class="input-group mt-3">
+<div class="input-group-prepend">
+<div class="input-group-text">
+<i class="fas fa-user-tag text-primary"></i> <!-- Blue icon -->
+</div>
+</div>
+<input th:value="${contact.secondName}" required type="text" id="secondName" name="secondName" placeholder="Enter Nick Name here" class="form-control" />
+</div>
+
+<!-- Phone Field -->
+<div class="input-group mt-3">
+<div class="input-group-prepend">
+<div class="input-group-text">
+<i class="fa fa-phone text-primary"></i> <!-- Blue icon -->
+</div>
+</div>
+<input th:value="${contact.phone}" required min="10" type="number" id="phone" name="phone" placeholder="Enter Phone Number here" class="form-control" />
+</div>
+                           
+<!-- Email Field -->
+<div class="input-group mt-3">
+<div class="input-group-prepend">
+<div class="input-group-text">
+
+<!-- Optional icon -->
+<i class="fa fa-envelope text-primary"></i> <!-- Blue icon -->
+</div>
+</div>
+<input th:value="${contact.email}" required type="email" id="email" name="email" placeholder="Enter email here" class="form-control" />
+</div>
+                                                     
+<!-- Work Field -->
+<div class="input-group mt-3">
+<div class="input-group-prepend">
+<div class="input-group-text">
+<i class="fa fa-tools text-primary"></i> <!-- Blue icon -->
+</div>
+</div>
+<input th:value="${contact.work}" required type="text" id="work" name="work" placeholder="Enter Skill here" class="form-control" />
+</div>
+                            
+<!-- Experience Field -->
+<div class="input-group mt-3">
+<div class="input-group-prepend">
+<div class="input-group-text">
+<i class="fa fa-briefcase text-primary"></i> <!-- Blue icon -->
+</div>
+</div>
+<input th:value="${contact.experience}" required type="number" id="experience" name="experience" placeholder="Enter Skill here" class="form-control" />
+</div>
+                           
+<!-- Pin-code Field -->
+<div class="input-group mt-3">
+<div class="input-group-prepend">
+<div class="input-group-text">
+<i class="fa fa-map-pin" style="color: #0c65f5;"></i> <!-- Dark blue pin code icon -->                        </div>
+</div>
+<input th:value="${contact.pincode}" required type="number" id="pincode" name="pincode" placeholder="Area pinCode" class="form-control" />
+</div>
+
+<!-- Address Field -->
+<div class="input-group mt-3">
+<div class="input-group-prepend">
+<div class="input-group-text">
+<i class="fa fa-map-marker-alt" style="color: #0c65f5;"></i> <!-- Dark blue address icon -->
+</div>
+</div>
+<textarea th:text="${contact.address}" required id="address" name="address" placeholder="Address" class="form-control"></textarea>
+</div>
+                            
+<!-- Contact Description -->
+<div class="form-group mt-3">
+<textarea th:text="${contact.description}" id="mytextarea" placeholder="Enter contact description" name="description" class="form-control" rows="5"></textarea>
+</div>
+                            
+<!-- Contact Image -->
+<div class="container text-center">
+<img style="width: 250px; height: 250px;" class="img-fluid my_profile_picture" src="" th:src="@{'/img/' + ${contact.image}}" alt="" />
+</div>
+<div class="custom-file">
+<input type="file" name="profileImage" />
+</div>                          
+<div class="container text-center">
+<button class="btn btn-outline-primary">Save Contact</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+		
+<script src="https://cdn.tiny.cloud/1/9eh54v18eyifujqkzohmtt0vqdk5v0om61ompkml5bcd32av/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>		
+		
+		<script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+      
+      
+    </script>
+		
+		<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var currentPath = location.pathname;
+        var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+        navLinks.forEach(function (link) {
+            if (link.getAttribute('href') === currentPath) {
+                link.style.backgroundColor = 'blue';
+                link.style.color = 'white';
+            } else {
+                link.style.backgroundColor = '';
+                link.style.color = 'black';
+            }
+        });
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Basic Setup
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('container').appendChild(renderer.domElement);
+
+            // Create Stars
+            const numStars = 10000;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(numStars * 3);
+
+            for (let i = 0; i < numStars; i++) {
+                positions[i * 3] = (Math.random() - 0.5) * 2000; // X position
+                positions[i * 3 + 1] = (Math.random() - 0.5) * 2000; // Y position
+                positions[i * 3 + 2] = (Math.random() - 0.5) * 2000; // Z position
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+            const material = new THREE.PointsMaterial({ color: 0xffffff, size: 1 });
+            const stars = new THREE.Points(geometry, material);
+            scene.add(stars);
+
+            // Camera Position
+            camera.position.z = 500;
+
+            // Animation Loop
+            function animate() {
+                requestAnimationFrame(animate);
+                stars.rotation.x += 0.001;
+                stars.rotation.y += 0.001;
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // Handle Window Resize
+            window.addEventListener('resize', () => {
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+            });
+        });
+    </script>
+
+</body>
+</html>
