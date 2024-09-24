@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>RuralClap</title>
+    <title>RulatrClap</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -26,6 +26,7 @@
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -33,6 +34,105 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
+
+<style>
+.registration-container {
+      max-width: 900px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      margin: auto;
+    }
+
+    .form-section {
+      background-color: #fff;
+    }
+
+    h4 {
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    button {
+      background-color: #b5a27f;
+      color: #fff;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #a08f6f;
+    }
+
+    .input-container {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .input-container input,
+    .input-container textarea {
+      border: none;
+      border-bottom: 2px solid #5c5757;
+      width: 100%;
+      padding: 8px 0;
+      font-size: 16px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .input-container input:focus,
+    .input-container textarea:focus {
+      border-bottom: 2px solid #b5a27f;
+    }
+
+    .input-container label {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      font-size: 16px;
+      color: #aaa;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    .input-container input:focus + label,
+    .input-container textarea:focus + label,
+    .input-container input:not(:placeholder-shown) + label,
+    .input-container textarea:not(:placeholder-shown) + label {
+      top: -20px;
+      left: 0;
+      font-size: 12px;
+      color: #b5a27f;
+    }
+
+    .form-check-label {
+      margin-left: 5px;
+      font-size: 14px;
+    }
+
+    .required-star {
+      color: red;
+    }
+
+    @media (max-width: 767.98px) {
+      .registration-container {
+        width: 100%;
+        border-radius: 0;
+      }
+
+      .col-md-6.p-0 {
+        padding: 0;
+      }
+
+      .form-section {
+        padding: 1rem;
+      }
+
+      .img-fluid {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+</style>
 
 <body>
     <!-- Spinner Start -->
@@ -48,7 +148,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 a">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <p class="m-0 fw-bold" style="font-size: 25px;"><i class="fa fa-briefcase text-primary ms-2"></i> &nbsp;Rural<span
+            <p class="m-0 fw-bold" style="font-size: 25px;"><i class="fa fa-briefcase text-primary ms-2"></i> &nbsp;Rular<span
                     style="color: #fb873f;">Clap</span></p>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -69,20 +169,8 @@
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
 
-<div class="nav-item dropdown">
-          <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        User Login 
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" th:href="@{/employerlogin}" href="#">Login</a>
-                        <a class="dropdown-item" th:href="@{/register	}" href="#">Signup</a>
-                    </div>
-                 </li>
-         </div>
-         <div class="nav-item dropdown" style="border-color:white;">
-           <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Labour Login 
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -90,8 +178,7 @@
                         <a class="dropdown-item" th:href="@{/signup}" href="#">Signup</a>
                     </div>
                 </li>
-		</div>
-           <a href="#" class="nav-item nav-link">
+>           <a href="#" class="nav-item nav-link">
                     <div id="google_translate_element"></div>
                 </a>
             </div>
@@ -100,218 +187,100 @@
     <!-- Navbar End -->
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container-fluid bg-primary py-5 mb-2 page-header">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
                     <h1 class="display-3 text-white animated slideInDown">Signup</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                            <li class="breadcrumb-item"><a class="text-white" href="login.html">Login</a></li>
-                        </ol>
-                    </nav>
+                   
                 </div>
             </div>
         </div>
     </div>
     <!-- Header End -->
-	<section>
-	
-	 <div class="container-xxl py-2 mt-4">
-        <div class="container">
+<section>
+	<!-- Alert Message Section -->
+	<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+		<p class="text-center" th:text="${session.message.content}"></p>  	               	     
+		<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+	</div>
 
-            <div class="row g-4 wow fadeInUp" data-wow-delay="0.5s ">
-	
-		<div class="container">
-			<div class="row">
-			
-				<div class="col-md-8 offset-md-2">
-				
-					<div class="my-card mt-1">
-					
-					 <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
-  	               	     <p class="text-center" th:text="${session.message.content}"></p>  	               	     
-  	               	     <th:block th:text="${#session.removeAttribute('message')}"></th:block>
-		             </div>
-					
-					
-					
-					
-					
-					
-					
-					  <center>
-					    <form class="shadow p-4" style="max-width: 550px;" action="" th:action="@{/do_register}" method="post" th:object="${user}" >
-                        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                            <h1 class="mb-5 bg-white text-center px-3">Signup</h1>
-
-                        </div>
-					  	<!-- name field  -->
-					  
-					  
-				<div class="row g-3">
-    <div class="col-12">
-        <div class="form-floating">
-            <input name="name" type="text"
-                   class="form-control" 
-                   th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}"
-                   id="name_field"
-                   placeholder="Your Name"
-                   required
-                   th:value="${user.name}" />
-            <label for="name_field">Your Name</label>
-            <div class="invalid-feedback" th:each="e : ${#fields.errors('name')}" th:text="${e}"></div>
-        </div>
-    </div>
-</div>
-
-			</br>		  
-					  	<!-- email field  -->
-					  
-					  
-					<div class="row g-3">
-    <div class="col-12">
-        <div class="form-floating">
-            <input name="email" type="email"
-                   class="form-control"
-                   id="email_field"
-                   placeholder="Your Email"
-                   required
-                   th:value="${user.email}" />
-            <label for="email_field">Your Email</label>
-        </div>
-    </div>
-</div>
-</br>
-					  	<!-- Mobile Number field  -->
-
-					<div class="row g-3">
-    <div class="col-12">
-        <div class="form-floating">
-            <input name="num" type="text"
-                   class="form-control"
-                   id="email_field"
-                   placeholder="Mobile Number"
-                   required
-                   th:value="${user.num}" />
-            <label for="num_field">Mobile Number</label>
-        </div>
-    </div>
-</div>
-</br>
-
-				  	<!-- Office Address field  -->
-
-					<div class="row g-3">
-    <div class="col-12">
-        <div class="form-floating">
-            <input name="office" type="text"
-                   class="form-control"
-                   id="office_field"
-                   placeholder="Office Address"
-                   required
-                   th:value="${user.office}" />
-            <label for="office_field">Office Address</label>
-        </div>
-    </div>
-</div>
-</br>
-
-
-			  	<!-- Pin code field  -->
-
-					<div class="row g-3">
-    <div class="col-12">
-        <div class="form-floating">
-            <input name="pin" type="num"
-                   class="form-control"
-                   id="pin_field"
-                   placeholder=" Area Pincode"
-                   required
-                   th:value="${user.pin}" />
-            <label for="pin_field">Area Pincode</label>
-        </div>
-    </div>
-</div>
-</br>
-
-
-
-					  	<!-- password field  -->
-					  
-					  
-					  <div class="row g-3">
-    <div class="col-12">
-        <div class="form-floating">
-            <input name="password" type="password"
-                   class="form-control"
-                   id="password_field"
-                   placeholder="Your Password"
-                   required />
-            <label for="password_field">Your Password</label>
-        </div>
-    </div>
-</div>
-</br>
-  						<!-- user about field -->
-  						
-  					<div class="row g-3">
-    <div class="col-12">
-        <div class="form-floating">
-            <textarea name="about" class="form-control"
-                      placeholder="Enter something about yourself"
-                      id="about_field" 
-                      rows="6" 
-                      style="height: auto;"
-                      th:text="${user.about}"></textarea>
-            <label for="about_field">Enter something about yourself</label>
-        </div>
-    </div>
-</div>
-
-  						<!-- terms and condition agreement  -->
-  						
-  						
-  						<div class="form-group form-check text-center">
-  						
-  								<input type="checkbox" 
-  								name="agreement"
-  								class="form-check-input"
-  								id="agreement"
-  								
-  								/>	
-  								
-  								<label for="agreement">Accept terms and conditions</label>
-  									
-  									
-  						
-  						</div>
-  						
-  						<div class="container text-center">
-  						
-  					    <button class="btn btn-primary" type="submit">Submit</button>
-                                <button class="btn btn-secondary" type="reset">Reset</button>
-  						
-  						</div>
-					  
-					  
-					  
-					  </form>
-				</center>
-					
-					</div>
-				
-				</div>
-			
-			
+	<!-- Registration Form Section -->
+	<div class="container-fluid d-flex justify-content-center align-items-center vh-100">
+		<div class="row shadow-lg registration-container w-100">
+			<!-- Image Section -->
+			<div class="col-md-6 p-0 d-none d-md-block">
+				<img src="https://img.freepik.com/free-vector/construction-worker-concept-illustration_114360-8916.jpg" class="img-fluid h-75 W-100" alt="Sign Up Image" />
 			</div>
-		
+
+			<!-- Form Section -->
+			<div class="col-md-6 p-5 form-section">
+				<h4 class="text-center mb-4">REGISTRATION</h4>
+				<p class="text-center mb-4">Please fill in your details</p>
+				
+				<form class="shadow p-4" style="max-width: 550px;" th:action="@{/do_register}" method="post" th:object="${user}">
+					<!-- Full Name & Mobile -->
+					<div class="form-row">
+						<div class="form-group col-md-6 input-container">
+							<input type="text" class="form-control" id="name_field" name="name" placeholder=" " required th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}" th:value="${user.name}">
+							<label for="name_field">Full Name <span class="required-star">*</span></label>
+							<div class="invalid-feedback" th:each="e : ${#fields.errors('name')}" th:text="${e}"></div>
+						</div>
+						<div class="form-group col-md-6 input-container">
+							<input type="text" class="form-control" id="num_field" name="num" placeholder=" " required th:value="${user.num}">
+							<label for="num_field">Mobile <span class="required-star">*</span></label>
+						</div>
+					</div>
+
+					<!-- Email -->
+					<div class="form-row">
+						<div class="form-group col-md-12 input-container">
+							<input type="email" class="form-control" id="email_field" name="email" placeholder=" " required th:value="${user.email}">
+							<label for="email_field">Mail <span class="required-star">*</span></label>
+						</div>
+					</div>
+
+					<!-- Office Address -->
+					<div class="form-row">
+						<div class="form-group col-md-12 input-container">
+							<input type="text" class="form-control" id="office_field" name="office" placeholder=" " required th:value="${user.office}">
+							<label for="office_field">Office Address <span class="required-star">*</span></label>
+						</div>
+					</div>
+
+					<!-- Area pincode & Password -->
+					<div class="form-row">
+						<div class="form-group col-md-6 input-container">
+							<input type="text" class="form-control" id="pin_field" name="pin" placeholder=" " required th:value="${user.pin}">
+							<label for="pin_field">Area Pincode <span class="required-star">*</span></label>
+						</div>
+						<div class="form-group col-md-6 input-container">
+							<input type="password" class="form-control" id="password_field" name="password" placeholder=" " required>
+							<label for="password_field">Password <span class="required-star">*</span></label>
+						</div>
+					</div>
+					<!-- About Yourself -->
+					<div class="form-row">
+						<div class="form-group col-md-12 input-container">
+							<textarea class="form-control" id="about_field" name="about" rows="3" placeholder=" " required th:text="${user.about}"></textarea>
+							<label for="about_field">Enter About Yourself in Short <span class="required-star">*</span></label>
+						</div>					</div>
+
+					<!-- Terms & Conditions -->
+					<div class="form-check mb-4">
+						<input class="form-check-input" type="checkbox" name="agreement" id="agreement" required>
+						<label class="form-check-label" for="agreement">
+							Accept Terms & Conditions <span class="required-star">*</span>
+						</label>
+					</div>
+
+					<!-- Submit Button -->
+					<button type="submit" class="btn btn-primary btn-block rounded-pill">Forward &rarr;</button>
+				</form>
+			</div>
 		</div>
-	
-	</section>
-	
-	
+	</div>
+</section>
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -328,7 +297,7 @@
                     <h4 class="text-white mb-3">Contact</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Green Park Niranjanpur, Dehradun, Uttrakhand</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 7488921583</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>ruralclap@gmail.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>rularclap@gmail.com</p>
                     
                 </div>
 
@@ -351,7 +320,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-                        <a href="#" class="text-primary mb-0 display-6">Rural<span class="text-white">Clap</span><i class="fa fa-briefcase text-primary ms-2"></i></a>
+                        <a href="#" class="text-primary mb-0 display-6">Rular<span class="text-white">Clap</span><i class="fa fa-briefcase text-primary ms-2"></i></a>
                     </div>
                     <div class="col-md-4 copyright-btn text-center text-md-start mb-3 mb-md-0 flex-shrink-0">
                         <a class="btn btn-primary rounded-circle me-3 copyright-icon" href=""><i class="fab fa-twitter"></i></a>
@@ -361,12 +330,8 @@
                     </div>
     </div>
     <!-- Footer End -->
-
-
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -374,12 +339,8 @@
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>  
+    <script src="js/main.js"></script>   
 
 
 </body>
