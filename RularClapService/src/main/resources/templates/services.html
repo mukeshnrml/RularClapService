@@ -39,7 +39,22 @@
  height:300px;
  width:150px;
 }
+
+
+    .custom-input {
+        border: none; /* Remove all borders */
+        border-bottom: 2px solid #ccc; /* Add bottom border */
+        border-radius: 0; /* Remove border-radius */
+        box-shadow: none; /* Remove shadow */
+    }
+
+    .custom-input:focus {
+        border-bottom: 2px solid #007bff; /* Change bottom border color on focus */
+        outline: none; /* Remove focus outline */
+        box-shadow: none; /* Ensure no shadow on focus */
+    }
 </style>
+
 
 <body>
     <!-- Spinner Start -->
@@ -137,20 +152,20 @@
                    <!--  <div class="card-title mt-3">Electrician</div>  -->
                 </a>
                 <div class="mt-auto">
-                    <button class="btn btn-primary btn-lg btn-block w-100" onclick="showLoginAlert(event)">Electrician</button>
+                    <button class="btn btn-primary btn-lg btn-block w-100 rounded-pill" onclick="showLoginAlert(event)">Electrician</button>
                 </div>
                 <p class="login-message"></p>
             </div>
         </div>
 
-        <div class="col-md-3 d-flex">
+        <div class="col-md-3 d-flex ">
             <div class="card h-100 w-100 d-flex flex-column" style="min-height: 300px;">
                 <a href="#" target="_blank" class="textp mt-4" onclick="showLoginAlert(event)">
                     <img class="imgh" src="https://fixoby.com/wp-content/uploads/2022/03/fixoby-washing-machine-repair-15.png" alt="Native Water Purifier">
                     
                 </a>
                 <div class="mt-auto">
-                    <button class="btn btn-primary btn-lg btn-block w-100" onclick="showLoginAlert(event)">Water Purifier Repair</button>
+                    <button class="btn btn-primary btn-lg btn-block w-100 rounded-pill" onclick="showLoginAlert(event)">Water Purifier Repair</button>
                 </div>
                 <p class="login-message"></p>
             </div>
@@ -163,7 +178,7 @@
                   
                 </a>
                 <div class="mt-auto">
-                    <button class="btn btn-primary btn-lg btn-block w-100" onclick="showLoginAlert(event)">Computer Repair</button>
+                    <button class="btn btn-primary btn-lg btn-block w-100 rounded-pill" onclick="showLoginAlert(event)">Computer Repair</button>
                 </div>
                 <p class="login-message"></p>
             </div>
@@ -179,7 +194,7 @@
                   
                 </a>
                 <div class="mt-auto">
-                    <button class="btn btn-primary btn-lg btn-block w-100" onclick="showLoginAlert(event)">Refrigerator Repair</button>
+                    <button class="btn btn-primary btn-lg btn-block w-100 rounded-pill" onclick="showLoginAlert(event)">Refrigerator Repair</button>
                 </div>
                 <p class="login-message"></p>
             </div>
@@ -192,7 +207,7 @@
                 
                 </a>
                 <div class="mt-auto">
-                    <button class="btn btn-primary btn-lg btn-block w-100" onclick="showLoginAlert(event)">Construction Worker</button>
+                    <button class="btn btn-primary btn-lg btn-block w-100 rounded-pill" onclick="showLoginAlert(event)">Construction Worker</button>
                 </div>
                 <p class="login-message"></p>
             </div>
@@ -205,7 +220,7 @@
                  
                 </a>
                 <div class="mt-auto">
-                    <button class="btn btn-primary btn-lg btn-block w-100" onclick="showLoginAlert(event)">Plumbing Support</button>
+                    <button class="btn btn-primary btn-lg btn-block w-100 rounded-pill" onclick="showLoginAlert(event)">Plumbing Support</button>
                 </div>
                 <p class="login-message"></p>
             </div>
@@ -218,8 +233,9 @@
 
 
 <!-- Get In Touch Start -->
-<div class="container-fluid py-5 wow fadeInUp a " data-wow-delay=".3s">
-    <div class="container py-5 ">
+<!-- Get In Touch Form Section -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay=".3s">
+    <div class="container py-5">
         <div class="px-4 py-5 shadow p-3 mb-5 bg-white rounded">
             <div class="text-center">
                 <h1 class="display-5 mb-5">Empower Your Workforce with Local Talent</h1>
@@ -230,11 +246,11 @@
                     <div class="col-xl-10 col-lg-12">
                         <div class="row g-4">
                             <div class="col-md-6 col-xl-3">
-                                <select name="serviceType" class="form-select p-3 border-0" required>
+                                <select name="serviceType" class="form-select p-3 custom-input" required>
                                     <option value="" selected>Type Of Service</option>
                                     <option value="Electrician">Electrician</option>
                                     <option value="Plumber">Plumber</option>
-                                    <option value="Salon">Salon</option>
+                                    <option value="Salon">Saloon</option>
                                     <option value="AC Repair">AC Repair</option>
                                     <option value="Carpenter">Carpenter</option>
                                     <option value="Gardener">Gardener</option>
@@ -243,29 +259,28 @@
                                 <small class="form-text text-muted">Please select the type of service you need.</small>
                             </div>
                             <div class="col-md-6 col-xl-3">
-                                <input type="text" name="name" class="form-control p-3 border-0" placeholder="Name" required>
+                                <input type="text" name="name" class="form-control p-3 custom-input" placeholder="Name" required>
                                 <small class="form-text text-muted">Enter your full name.</small>
                             </div>
                             <div class="col-md-6 col-xl-3">
-                                <input type="text" name="phone" class="form-control p-3 border-0" placeholder="Phone" required pattern="\d{10}" title="Please enter a valid 10-digit phone number">
+                                <input type="text" name="phone" class="form-control p-3 custom-input" placeholder="Phone" required pattern="\d{10}" title="Please enter a valid 10-digit phone number">
                                 <small class="form-text text-muted">Enter your 10-digit phone number.</small>
                             </div>
                             <div class="col-md-6 col-xl-3">
-                                <input type="email" name="email" class="form-control p-3 border-0 border border-dark" placeholder="Email" required>
+                                <input type="email" name="email" class="form-control p-3 custom-input" placeholder="Email" required>
                                 <small class="form-text text-muted">Enter your email address.</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-2 col-lg-12">
-                        <input type="submit" class="btn btn-primary w-100 p-3 border-0" value="GET STARTED">
+                        <input type="submit" class="btn btn-primary w-100 p-3 border-0 rounded-pill" value="GET STARTED">
                     </div>
                 </div>
             </form>
         </div>
     </div>
-  </div>
-  <!-- Get In Touch End -->
-    
+</div>
+<!-- Get In Touch End -->
    
 
     <!-- Footer Start -->
